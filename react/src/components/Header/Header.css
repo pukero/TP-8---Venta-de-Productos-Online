@@ -4,7 +4,6 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid #e0e0e0;
 }
 
 .header-container {
@@ -24,11 +23,6 @@
 .logo {
   height: 50px;
   width: auto;
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.05);
 }
 
 .nav {
@@ -55,29 +49,15 @@
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 4px;
-  transition: all 0.3s ease;
-  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .nav-link:hover {
   color: #007bff;
   background-color: #f8f9fa;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 50%;
-  background-color: #007bff;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.nav-link:hover::after {
-  width: 80%;
 }
 
 /* Dropdown Styles */
@@ -92,11 +72,23 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.dropdown-toggle:hover {
+  color: #007bff;
+  background-color: #f8f9fa;
 }
 
 .dropdown-arrow {
   font-size: 0.8rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .dropdown-arrow.open {
@@ -109,12 +101,12 @@
   left: 0;
   background: white;
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   min-width: 200px;
-  z-index: 1000;
+  z-index: 1001;
   padding: 0.5rem 0;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .dropdown-item {
@@ -122,12 +114,7 @@
   padding: 0.75rem 1rem;
   color: #333;
   text-decoration: none;
-  transition: background-color 0.3s ease;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.dropdown-item:last-child {
-  border-bottom: none;
+  transition: background-color 0.2s ease;
 }
 
 .dropdown-item:hover {
@@ -136,14 +123,14 @@
 }
 
 .dropdown-item.loading {
-  color: #7f8c8d;
+  color: #666;
   font-style: italic;
   cursor: default;
 }
 
 .dropdown-item.loading:hover {
   background-color: transparent;
-  color: #7f8c8d;
+  color: #666;
 }
 
 /* Responsive Design */
@@ -164,7 +151,7 @@
     height: 40px;
   }
   
-  .nav-link {
+  .nav-link, .dropdown-toggle {
     font-size: 0.9rem;
     padding: 0.4rem 0.8rem;
   }
@@ -177,8 +164,15 @@
     text-align: center;
   }
   
-  .nav-link {
+  .nav-link, .dropdown-toggle {
     display: block;
     width: 100%;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    margin-top: 0.5rem;
   }
 }

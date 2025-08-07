@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/LOGO.png';
@@ -7,39 +5,52 @@ import { getCategories } from '../../services/api';
 import './Header.css';
 
 const Header = () => {
-  const [categories, setCategories] = useState([]);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
-
+  const [categorias, setCategorias] = useState([]);
+  const [estaAbiertoDesplegable, setEstaAbiertoDesplegable] = useState(false);
+  const [cargando, setCargando] = useState(true);
+  
   useEffect(() => {
-    const fetchCategories = async () => {
+    const obtenerCategorias = async () => {
       try {
-        const categoriesData = await getCategories();
-        setCategories(categoriesData);
+        const datosCategorias = await getCategories();
+        setCategorias(datosCategorias);
       } catch (error) {
-        console.error('Error loading categories:', error);
+        console.error('Error cargando categorías:', error);
       } finally {
-        setLoading(false);
+        setCargando(false);
       }
     };
 
-    fetchCategories();
+    obtenerCategorias();
   }, []);
 
-  const handleDropdownToggle = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const manejarCambioDesplegable = () => {
+    setEstaAbiertoDesplegable(!estaAbiertoDesplegable);
   };
 
-  const handleDropdownClose = () => {
-    setIsDropdownOpen(false);
+  const manejarCierreDesplegable = () => {
+    setEstaAbiertoDesplegable(false);
   };
 
   // Formatear nombre de categoría para mostrar
-  const formatCategoryName = (category) => {
-    return category
-      .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+  const formatearNombreCategoria = (categoria) => {
+    // Si es un string simple
+    if (typeof categoria === 'string') {
+      return categoria
+        .split('-')
+        .map(palabra => palabra.charAt(0).toUpperCase() + palabra.slice(1))
+        .join(' ');
+    }
+    
+    // Si es un objeto con name
+    if (categoria && categoria.name) {
+      return categoria.name
+        .split('-')
+        .map(palabra => palabra.charAt(0).toUpperCase() + palabra.slice(1))
+        .join(' ');
+    }
+    
+    return categoria || '';
   };
 
   return (
@@ -53,37 +64,36 @@ const Header = () => {
         <nav className="nav">
           <ul className="nav-list">
             <li className="nav-item">
-              <Link to="/" className="nav-link">Home</Link>
+              <Link to="/" className="nav-link">Inicio</Link>
             </li>
-            <li className="nav-item dropdown" onMouseLeave={handleDropdownClose}>
+            <li className="nav-item dropdown">
               <button 
                 className="nav-link dropdown-toggle"
-                onClick={handleDropdownToggle}
-                onMouseEnter={() => setIsDropdownOpen(true)}
+                onClick={manejarCambioDesplegable}
               >
                 Productos
-                <span className={`dropdown-arrow ${isDropdownOpen ? 'open' : ''}`}>▼</span>
+                <span className={`dropdown-arrow ${estaAbiertoDesplegable ? 'open' : ''}`}>▼</span>
               </button>
-              {isDropdownOpen && (
+              {estaAbiertoDesplegable && (
                 <div className="dropdown-menu">
                   <Link 
                     to="/productos" 
                     className="dropdown-item"
-                    onClick={handleDropdownClose}
+                    onClick={manejarCierreDesplegable}
                   >
                     Ver todos
                   </Link>
-                  {loading ? (
+                  {cargando ? (
                     <div className="dropdown-item loading">Cargando...</div>
                   ) : (
-                    categories.map((category) => (
+                    categorias.map((categoria) => (
                       <Link
-                        key={category.slug}
-                        to={`/productos/categoria/${category.slug}`}
+                        key={categoria.slug || categoria}
+                        to={`/productos/categoria/${categoria.slug || categoria}`}
                         className="dropdown-item"
-                        onClick={handleDropdownClose}
+                        onClick={manejarCierreDesplegable}
                       >
-                        {formatCategoryName(category.name)}
+                        {formatearNombreCategoria(categoria)}
                       </Link>
                     ))
                   )}
@@ -91,7 +101,7 @@ const Header = () => {
               )}
             </li>
             <li className="nav-item">
-              <Link to="/quienes-somos" className="nav-link">Quienes somos</Link>
+              <Link to="/quienes-somos" className="nav-link">Quiénes somos</Link>
             </li>
             <li className="nav-item">
               <Link to="/contacto" className="nav-link">Contacto</Link>

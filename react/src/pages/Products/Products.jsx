@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getAllProducts, getProductsByCategory } from '../../services/api';
 import './Products.css';
 
 const Products = () => {
@@ -16,19 +15,25 @@ const Products = () => {
     const fetchProducts = async () => {
       setLoading(true);
       setError(null);
-      
+
       try {
         const skip = (currentPage - 1) * productsPerPage;
-        let response;
-        
+        let url = '';
+
         if (categoria) {
-          response = await getProductsByCategory(categoria, productsPerPage, skip);
+          url = `https://dummyjson.com/products/category/${categoria}?limit=${productsPerPage}&skip=${skip}`;
         } else {
-          response = await getAllProducts(productsPerPage, skip);
+          url = `https://dummyjson.com/products?limit=${productsPerPage}&skip=${skip}`;
         }
-        
-        setProducts(response.products);
-        setTotalProducts(response.total);
+
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error('Error al obtener productos');
+        }
+        const data = await response.json();
+
+        setProducts(data.products);
+        setTotalProducts(data.total);
       } catch (err) {
         setError('Error al cargar los productos');
         console.error('Error fetching products:', err);

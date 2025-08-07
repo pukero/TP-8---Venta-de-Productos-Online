@@ -1,64 +1,23 @@
-/* Reset y estilos globales */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilos base */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
   color: #333;
-  background-color: #f8f9fa;
+  background-color: #fff;
 }
 
-/* Layout principal */
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-.main-content {
-  flex: 1;
-  padding-top: 0;
-}
-
-/* Estilos para la página de productos placeholder */
-.productos-placeholder {
-  min-height: calc(100vh - 200px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-}
-
-.placeholder-container {
-  text-align: center;
-  background: white;
-  padding: 4rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  width: 100%;
-}
-
-.placeholder-container h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 1rem;
-}
-
-.placeholder-container p {
-  font-size: 1.1rem;
-  color: #7f8c8d;
-  line-height: 1.6;
-}
-
-/* Estilos globales para botones */
-button {
-  font-family: inherit;
 }
 
 /* Estilos para enlaces */
@@ -67,80 +26,9 @@ a {
   text-decoration: none;
 }
 
-/* Utilidades */
+/* Utilidades básicas */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* Responsive utilities */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1rem;
-  }
-  
-  .placeholder-container {
-    padding: 3rem 1.5rem;
-  }
-  
-  .placeholder-container h1 {
-    font-size: 2rem;
-  }
-  
-  .placeholder-container p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .placeholder-container {
-    padding: 2rem 1rem;
-  }
-  
-  .placeholder-container h1 {
-    font-size: 1.8rem;
-  }
-}
-
-/* Animaciones suaves */
-* {
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-/* Scrollbar personalizada */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
-}
-
-/* Focus styles para accesibilidad */
-button:focus,
-input:focus,
-textarea:focus,
-select:focus,
-a:focus {
-  outline: 2px solid #3498db;
-  outline-offset: 2px;
-}
-
-/* Estilos para elementos deshabilitados */
-button:disabled,
-input:disabled,
-textarea:disabled,
-select:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+  padding: 0 20px;
 }
