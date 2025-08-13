@@ -26,7 +26,6 @@
   color: #7f8c8d;
 }
 
-/* Loading and Error States */
 .loading-container,
 .error-container {
   display: flex;
@@ -72,7 +71,6 @@
   background-color: #2980b9;
 }
 
-/* Products Grid */
 .productos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -194,7 +192,6 @@
   color: #e74c3c;
 }
 
-/* Pagination */
 .pagination {
   display: flex;
   justify-content: center;
@@ -250,7 +247,6 @@
   color: white;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .productos-container {
     padding: 0 1rem;
@@ -310,7 +306,6 @@
   }
 }
 
-/* Animation for product cards loading */
 .product-card {
   animation: fadeInUp 0.6s ease-out;
 }
@@ -325,8 +320,35 @@
     transform: translateY(0);
   }
 }
+.productos-select-wrapper {
+  margin: 1rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
 
-/* Stagger animation for multiple cards */
+.productos-select {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #bdc3c7;
+  font-size: 1rem;
+  color: #2c3e50;
+  background: #f8f8f8;
+  outline: none;
+  transition: border-color 0.2s;
+  min-width: 220px;
+}
+
+.productos-select:focus {
+  border-color: #3498db;
+}
+
+@media (max-width: 480px) {
+  .productos-select {
+    font-size: 0.95rem;
+    min-width: 140px;
+    padding: 0.4rem 0.7rem;
+  }
+}
 .product-card:nth-child(1) { animation-delay: 0.1s; }
 .product-card:nth-child(2) { animation-delay: 0.2s; }
 .product-card:nth-child(3) { animation-delay: 0.3s; }

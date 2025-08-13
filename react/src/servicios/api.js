@@ -1,7 +1,6 @@
 
 const API_BASE_URL = 'https://dummyjson.com';
 
-// Obtener todas las categorías
 export const getCategories = async () => {
   try {
     const response = await fetch(`${API_BASE_URL}/products/categories`);
@@ -15,7 +14,6 @@ export const getCategories = async () => {
   }
 };
 
-// Obtener todos los productos
 export const getAllProducts = async (limit = 30, skip = 0) => {
   try {
     const response = await fetch(`${API_BASE_URL}/products?limit=${limit}&skip=${skip}`);
@@ -29,7 +27,6 @@ export const getAllProducts = async (limit = 30, skip = 0) => {
   }
 };
 
-// Obtener productos por categoría
 export const getProductsByCategory = async (category, limit = 30, skip = 0) => {
   try {
     const response = await fetch(`${API_BASE_URL}/products/category/${category}?limit=${limit}&skip=${skip}`);
@@ -43,7 +40,6 @@ export const getProductsByCategory = async (category, limit = 30, skip = 0) => {
   }
 };
 
-// Obtener un producto específico por ID
 export const getProductById = async (id) => {
   try {
     const response = await fetch(`${API_BASE_URL}/products/${id}`);
@@ -57,7 +53,6 @@ export const getProductById = async (id) => {
   }
 };
 
-// Buscar productos
 export const searchProducts = async (query, limit = 30, skip = 0) => {
   try {
     const response = await fetch(`${API_BASE_URL}/products/search?q=${query}&limit=${limit}&skip=${skip}`);
