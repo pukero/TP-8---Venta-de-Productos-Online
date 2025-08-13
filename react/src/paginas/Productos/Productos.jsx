@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import './Products.css';
+import './Productos.css';
 
-const Products = () => {
+const Productos = () => {
   const { categoria } = useParams();
-  const [products, setProducts] = useState([]);
+  const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalProducts, setTotalProducts] = useState(0);
+  const [totalProductos, setTotalProductos] = useState(0);
   const productsPerPage = 12;
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchProductos = async () => {
       setLoading(true);
       setError(null);
 
@@ -32,20 +32,20 @@ const Products = () => {
         }
         const data = await response.json();
 
-        setProducts(data.products);
-        setTotalProducts(data.total);
+        setProductos(data.products);
+        setTotalProductos(data.total);
       } catch (err) {
         setError('Error al cargar los productos');
-        console.error('Error fetching products:', err);
+        console.error('Error fetching productos:', err);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchProducts();
+    fetchProductos();
   }, [categoria, currentPage]);
 
-  // Reset page when category changes
+ 
   useEffect(() => {
     setCurrentPage(1);
   }, [categoria]);
@@ -65,7 +65,7 @@ const Products = () => {
     }).format(price);
   };
 
-  const totalPages = Math.ceil(totalProducts / productsPerPage);
+  const totalPages = Math.ceil(totalProductos / productsPerPage);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -74,8 +74,8 @@ const Products = () => {
 
   if (loading) {
     return (
-      <div class="products">
-        <div class="products-container">
+      <div class="productos">
+        <div class="productos-container">
           <div class="loading-container">
             <div class="loading-spinner"></div>
             <p>Cargando productos...</p>
@@ -87,8 +87,8 @@ const Products = () => {
 
   if (error) {
     return (
-      <div class="products">
-        <div class="products-container">
+      <div class="productos">
+        <div class="productos-container">
           <div class="error-container">
             <h2>Error</h2>
             <p>{error}</p>
@@ -102,19 +102,19 @@ const Products = () => {
   }
 
   return (
-    <div class="products">
-      <div class="products-container">
-        <div class="products-header">
+    <div class="productos">
+      <div class="productos-container">
+        <div class="productos-header">
           <h1>
             {categoria ? `Productos - ${formatCategoryName(categoria)}` : 'Todos los Productos'}
           </h1>
-          <p class="products-count">
-            Mostrando {products.length} de {totalProducts} productos
+          <p class="productos-count">
+            Mostrando {productos.length} de {totalProductos} productos
           </p>
         </div>
 
-        <div class="products-grid">
-          {products.map((product) => (
+        <div class="productos-grid">
+          {productos.map((product) => (
             <div key={product.id} class="product-card">
               <Link to={`/producto/${product.id}`} class="product-link">
                 <div class="product-image-container">
@@ -219,4 +219,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Productos;

@@ -1,26 +1,26 @@
-.about {
+.QuienesSomos {
   min-height: calc(100vh - 200px);
 }
 
-.about-container {
+.QuienesSomos-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-.about-header {
+.QuienesSomos-header {
   text-align: center;
   padding: 3rem 0;
 }
 
-.about-title {
+.QuienesSomos-title {
   font-size: 2.5rem;
   font-weight: 600;
   color: #2c3e50;
   margin-bottom: 1rem;
 }
 
-.about-subtitle {
+.QuienesSomos-subtitle {
   font-size: 1.1rem;
   color: #7f8c8d;
   max-width: 600px;
@@ -29,7 +29,7 @@
 }
 
 /* Story Section */
-.about-story {
+.QuienesSomos-story {
   margin-bottom: 4rem;
 }
 
@@ -267,11 +267,11 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .about-container {
+  .QuienesSomos-container {
     padding: 0 1rem;
   }
   
-  .about-title {
+  .QuienesSomos-title {
     font-size: 2rem;
   }
   
@@ -311,11 +311,11 @@
 }
 
 @media (max-width: 480px) {
-  .about-header {
+  .QuienesSomos-header {
     padding: 2rem 0;
   }
   
-  .about-title {
+  .QuienesSomos-title {
     font-size: 1.8rem;
   }
   

@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './About.css';
+import './QuienesSomos.css';
 
-const About = () => {
+const QuienesSomos = () => {
   return (
-    <div class="about">
-      <div class="about-container">
-        <div class="about-header">
-          <h1 class="about-title">Quiénes Somos</h1>
-          <p class="about-subtitle">
+    <div class="QuienesSomos">
+      <div class="QuienesSomos-container">
+        <div class="QuienesSomos-header">
+          <h1 class="QuienesSomos-title">Quiénes Somos</h1>
+          <p class="QuienesSomos-subtitle">
             Conoce nuestra historia, misión y los valores que nos impulsan cada día.
           </p>
         </div>
 
-        <section class="about-story">
+        <section class="QuienesSomos-story">
           <div class="story-content">
             <div class="story-text">
               <h2>Nuestra Historia</h2>
@@ -130,4 +130,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default QuienesSomos;

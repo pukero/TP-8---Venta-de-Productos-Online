@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Contact.css';
+import './contacto.css';
 
-const Contact = () => {
+const contacto = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,7 +20,7 @@ const Contact = () => {
     e.preventDefault();
     // Aquí se manejaría el envío del formulario
     console.log('Formulario enviado:', formData);
-    alert('¡Mensaje enviado! Te contactaremos pronto.');
+    alert('¡Mensaje enviado! Te contactocontactoaremos pronto.');
     setFormData({
       name: '',
       email: '',
@@ -30,18 +30,18 @@ const Contact = () => {
   };
 
   return (
-    <div class="contact">
-      <div class="contact-container">
-        <div class="contact-header">
-          <h1 class="contact-title">Contáctanos</h1>
-          <p class="contact-subtitle">
+    <div class="contactocontacto">
+      <div class="contactocontacto-container">
+        <div class="contactocontacto-header">
+          <h1 class="contactocontacto-title">Contáctanos</h1>
+          <p class="contactocontacto-subtitle">
             Estamos aquí para ayudarte. Envíanos un mensaje y te responderemos lo antes posible.
           </p>
         </div>
 
-        <div class="contact-content">
-          <div class="contact-info">
-            <h2>Información de Contacto</h2>
+        <div class="contactocontacto-content">
+          <div class="contactocontacto-info">
+            <h2>Información de contactoo</h2>
             <div class="info-item">
               <div class="info-icon">📧</div>
               <div class="info-details">
@@ -79,9 +79,9 @@ const Contact = () => {
             </div>
           </div>
 
-          <div class="contact-form-container">
+          <div class="contactocontacto-form-container">
             <h2>Envíanos un Mensaje</h2>
-            <form class="contact-form" onSubmit={handleSubmit}>
+            <form class="contactocontacto-form" onSubmit={handleSubmit}>
               <div class="form-group">
                 <label htmlFor="name">Nombre Completo</label>
                 <input
@@ -145,4 +145,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default contacto;

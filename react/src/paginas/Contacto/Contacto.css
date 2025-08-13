@@ -1,27 +1,27 @@
-.contact {
+.contacto {
   min-height: calc(100vh - 200px);
   padding: 2rem 0;
 }
 
-.contact-container {
+.contacto-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-.contact-header {
+.contacto-header {
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.contact-title {
+.contacto-title {
   font-size: 2.5rem;
   font-weight: 600;
   color: #2c3e50;
   margin-bottom: 1rem;
 }
 
-.contact-subtitle {
+.contacto-subtitle {
   font-size: 1.1rem;
   color: #7f8c8d;
   max-width: 600px;
@@ -29,7 +29,7 @@
   line-height: 1.6;
 }
 
-.contact-content {
+.contacto-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
@@ -37,7 +37,7 @@
 }
 
 /* Contact Info Section */
-.contact-info h2 {
+.contacto-info h2 {
   font-size: 1.8rem;
   font-weight: 600;
   color: #2c3e50;
@@ -80,14 +80,14 @@
 }
 
 /* Contact Form Section */
-.contact-form-container h2 {
+.contacto-form-container h2 {
   font-size: 1.8rem;
   font-weight: 600;
   color: #2c3e50;
   margin-bottom: 2rem;
 }
 
-.contact-form {
+.contacto-form {
   background: white;
   padding: 2rem;
   border-radius: 12px;
@@ -154,21 +154,21 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .contact-container {
+  .contacto-container {
     padding: 0 1rem;
   }
   
-  .contact-title {
+  .contacto-title {
     font-size: 2rem;
   }
   
-  .contact-content {
+  .contacto-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
-  .contact-info h2,
-  .contact-form-container h2 {
+  .contacto-info h2,
+  .contacto-form-container h2 {
     font-size: 1.5rem;
   }
   
@@ -180,21 +180,21 @@
     font-size: 1.5rem;
   }
   
-  .contact-form {
+  .contacto-form {
     padding: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .contact {
+  .contacto {
     padding: 1rem 0;
   }
   
-  .contact-title {
+  .contacto-title {
     font-size: 1.8rem;
   }
   
-  .contact-subtitle {
+  .contacto-subtitle {
     font-size: 1rem;
   }
   
@@ -209,7 +209,7 @@
     margin-bottom: 0.5rem;
   }
   
-  .contact-form {
+  .contacto-form {
     padding: 1rem;
   }
   
