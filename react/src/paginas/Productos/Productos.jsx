@@ -74,10 +74,10 @@ const Products = () => {
 
   if (loading) {
     return (
-      <div className="products">
-        <div className="products-container">
-          <div className="loading-container">
-            <div className="loading-spinner"></div>
+      <div class="products">
+        <div class="products-container">
+          <div class="loading-container">
+            <div class="loading-spinner"></div>
             <p>Cargando productos...</p>
           </div>
         </div>
@@ -87,9 +87,9 @@ const Products = () => {
 
   if (error) {
     return (
-      <div className="products">
-        <div className="products-container">
-          <div className="error-container">
+      <div class="products">
+        <div class="products-container">
+          <div class="error-container">
             <h2>Error</h2>
             <p>{error}</p>
             <button onClick={() => window.location.reload()}>
@@ -102,66 +102,66 @@ const Products = () => {
   }
 
   return (
-    <div className="products">
-      <div className="products-container">
-        <div className="products-header">
+    <div class="products">
+      <div class="products-container">
+        <div class="products-header">
           <h1>
             {categoria ? `Productos - ${formatCategoryName(categoria)}` : 'Todos los Productos'}
           </h1>
-          <p className="products-count">
+          <p class="products-count">
             Mostrando {products.length} de {totalProducts} productos
           </p>
         </div>
 
-        <div className="products-grid">
+        <div class="products-grid">
           {products.map((product) => (
-            <div key={product.id} className="product-card">
-              <Link to={`/producto/${product.id}`} className="product-link">
-                <div className="product-image-container">
+            <div key={product.id} class="product-card">
+              <Link to={`/producto/${product.id}`} class="product-link">
+                <div class="product-image-container">
                   <img 
                     src={product.thumbnail} 
                     alt={product.title}
-                    className="product-image"
+                    class="product-image"
                     loading="lazy"
                   />
                   {product.discountPercentage > 0 && (
-                    <div className="discount-badge">
+                    <div class="discount-badge">
                       -{Math.round(product.discountPercentage)}%
                     </div>
                   )}
                 </div>
-                <div className="product-info">
-                  <h3 className="product-title">{product.title}</h3>
-                  <p className="product-description">
+                <div class="product-info">
+                  <h3 class="product-title">{product.title}</h3>
+                  <p class="product-description">
                     {product.description.length > 100 
                       ? `${product.description.substring(0, 100)}...` 
                       : product.description
                     }
                   </p>
-                  <div className="product-rating">
-                    <div className="stars">
+                  <div class="product-rating">
+                    <div class="stars">
                       {'★'.repeat(Math.floor(product.rating))}
                       {'☆'.repeat(5 - Math.floor(product.rating))}
                     </div>
-                    <span className="rating-text">({product.rating})</span>
+                    <span class="rating-text">({product.rating})</span>
                   </div>
-                  <div className="product-price">
+                  <div class="product-price">
                     {product.discountPercentage > 0 ? (
                       <>
-                        <span className="original-price">
+                        <span class="original-price">
                           {formatPrice(product.price / (1 - product.discountPercentage / 100))}
                         </span>
-                        <span className="current-price">{formatPrice(product.price)}</span>
+                        <span class="current-price">{formatPrice(product.price)}</span>
                       </>
                     ) : (
-                      <span className="current-price">{formatPrice(product.price)}</span>
+                      <span class="current-price">{formatPrice(product.price)}</span>
                     )}
                   </div>
-                  <div className="product-stock">
+                  <div class="product-stock">
                     {product.stock > 0 ? (
-                      <span className="in-stock">En stock ({product.stock})</span>
+                      <span class="in-stock">En stock ({product.stock})</span>
                     ) : (
-                      <span className="out-of-stock">Sin stock</span>
+                      <span class="out-of-stock">Sin stock</span>
                     )}
                   </div>
                 </div>
@@ -171,16 +171,16 @@ const Products = () => {
         </div>
 
         {totalPages > 1 && (
-          <div className="pagination">
+          <div class="pagination">
             <button 
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className="pagination-btn"
+              class="pagination-btn"
             >
               Anterior
             </button>
             
-            <div className="pagination-numbers">
+            <div class="pagination-numbers">
               {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
                 let pageNumber;
                 if (totalPages <= 5) {
@@ -197,7 +197,7 @@ const Products = () => {
                   <button
                     key={pageNumber}
                     onClick={() => handlePageChange(pageNumber)}
-                    className={`pagination-number ${currentPage === pageNumber ? 'active' : ''}`}
+                    class={`pagination-number ${currentPage === pageNumber ? 'active' : ''}`}
                   >
                     {pageNumber}
                   </button>
@@ -208,7 +208,7 @@ const Products = () => {
             <button 
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className="pagination-btn"
+              class="pagination-btn"
             >
               Siguiente
             </button>

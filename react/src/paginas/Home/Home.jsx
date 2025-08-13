@@ -4,10 +4,10 @@ import './Home.css';
 
 const Home = () => {
   return (
-    <div className="home">
+    <div class="home">
       <h1>Bienvenido a Nuestra Tienda</h1>
       <p>Descubre los mejores productos con la calidad que mereces.</p>
-      <Link to="/productos" className="btn-primary">Ver Productos</Link>
+      <Link to="/productos" class="btn-primary">Ver Productos</Link>
     </div>
   );
 };

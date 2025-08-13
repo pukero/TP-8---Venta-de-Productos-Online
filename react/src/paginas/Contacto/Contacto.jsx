@@ -30,48 +30,48 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact">
-      <div className="contact-container">
-        <div className="contact-header">
-          <h1 className="contact-title">Contáctanos</h1>
-          <p className="contact-subtitle">
+    <div class="contact">
+      <div class="contact-container">
+        <div class="contact-header">
+          <h1 class="contact-title">Contáctanos</h1>
+          <p class="contact-subtitle">
             Estamos aquí para ayudarte. Envíanos un mensaje y te responderemos lo antes posible.
           </p>
         </div>
 
-        <div className="contact-content">
-          <div className="contact-info">
+        <div class="contact-content">
+          <div class="contact-info">
             <h2>Información de Contacto</h2>
-            <div className="info-item">
-              <div className="info-icon">📧</div>
-              <div className="info-details">
+            <div class="info-item">
+              <div class="info-icon">📧</div>
+              <div class="info-details">
                 <h3>Email</h3>
                 <p>info@empresa.com</p>
                 <p>ventas@empresa.com</p>
               </div>
             </div>
             
-            <div className="info-item">
-              <div className="info-icon">📞</div>
-              <div className="info-details">
+            <div class="info-item">
+              <div class="info-icon">📞</div>
+              <div class="info-details">
                 <h3>Teléfono</h3>
                 <p>+54 11 1234-5678</p>
                 <p>+54 11 8765-4321</p>
               </div>
             </div>
             
-            <div className="info-item">
-              <div className="info-icon">📍</div>
-              <div className="info-details">
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div class="info-details">
                 <h3>Dirección</h3>
                 <p>Av. Corrientes 1234</p>
                 <p>Buenos Aires, Argentina</p>
               </div>
             </div>
             
-            <div className="info-item">
-              <div className="info-icon">🕒</div>
-              <div className="info-details">
+            <div class="info-item">
+              <div class="info-icon">🕒</div>
+              <div class="info-details">
                 <h3>Horarios de Atención</h3>
                 <p>Lunes a Viernes: 9:00 - 18:00</p>
                 <p>Sábados: 9:00 - 14:00</p>
@@ -79,10 +79,10 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="contact-form-container">
+          <div class="contact-form-container">
             <h2>Envíanos un Mensaje</h2>
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-group">
+            <form class="contact-form" onSubmit={handleSubmit}>
+              <div class="form-group">
                 <label htmlFor="name">Nombre Completo</label>
                 <input
                   type="text"
@@ -95,7 +95,7 @@ const Contact = () => {
                 />
               </div>
               
-              <div className="form-group">
+              <div class="form-group">
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
@@ -108,7 +108,7 @@ const Contact = () => {
                 />
               </div>
               
-              <div className="form-group">
+              <div class="form-group">
                 <label htmlFor="subject">Asunto</label>
                 <input
                   type="text"
@@ -121,7 +121,7 @@ const Contact = () => {
                 />
               </div>
               
-              <div className="form-group">
+              <div class="form-group">
                 <label htmlFor="message">Mensaje</label>
                 <textarea
                   id="message"
@@ -134,7 +134,7 @@ const Contact = () => {
                 ></textarea>
               </div>
               
-              <button type="submit" className="submit-btn">
+              <button type="submit" class="submit-btn">
                 Enviar Mensaje
               </button>
             </form>
